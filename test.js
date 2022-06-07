@@ -60,45 +60,45 @@ document.addEventListener("DOMContentLoaded",() => {
     })
  })
 
-// var idx = 0;
+var idx = 0;
             
-// function seq_init() {
-//     var seq_play = true;
-//     var _img_load = 0;
-//     var _img_count = 120;
-//     for (idx = 0; idx <= _img_count; idx++) {
-//         var _img_tmp = new Image();
-//         _img_tmp.src = "resorce/Sequences/B1맵_(" + idx + ").png";
-//         _img_tmp.onload = function () {
-//             ++_img_load;
-//             if (_img_load == _img_count) {
-//                 rolling();
-//             }
-//         };
-//         _img_tmp.onerror = function () {
-//             ++_img_load;
-//             if (_img_load == _img_count) {
-//                 rolling();
-//             }
-//         };
-//     }
-//     idx = 0;
-//     function rolling() {
-//         setTimeout(function () {
-//             if (seq_play) idx++;
-//             $("a.ico_1 img").attr("src", "resorce/Sequences/B1맵_(" + idx + ").png");
-//             if (idx == 120) {
-//                 seq_play = false;
-//                 idx = 0;
-//             }
-//             if (!seq_play) {
-//                 if (idx == 0) seq_play = true;
-//             }
-//             rolling();
-//         }, 60);
-//     }
-// }
-// seq_init();
+function seq_init() {
+    var seq_play = true;
+    var _img_load = 0;
+    var _img_count = 120;
+    for (idx = 0; idx <= _img_count; idx++) {
+        var _img_tmp = new Image();
+        _img_tmp.src = "resorce/Sequences/B1맵_(" + idx + ").png";
+        _img_tmp.onload = function () {
+            ++_img_load;
+            if (_img_load == _img_count) {
+                rolling();
+            }
+        };
+        _img_tmp.onerror = function () {
+            ++_img_load;
+            if (_img_load == _img_count) {
+                rolling();
+            }
+        };
+    }
+    idx = 0;
+    function rolling() {
+        setTimeout(function () {
+            if (seq_play) idx++;
+            $("a.ico_1 img").attr("src", "resorce/Sequences/B1맵_(" + idx + ").png");
+            if (idx == 120) {
+                seq_play = false;
+                idx = 0;
+            }
+            if (!seq_play) {
+                if (idx == 0) seq_play = true;
+            }
+            rolling();
+        }, 70);
+    }
+}
+seq_init();
 
 
 

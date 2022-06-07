@@ -103,6 +103,11 @@ header {
 	font-size: 145.31px;
 }
 
+.visual > .section > .ico_1 {
+	position: relative;
+	top: 50px;
+}
+
 #contents {
 	position: relative;
 }
@@ -111,10 +116,4 @@ header {
 	background-color: black;
 }
 
-.ico_1 > img {
-	height: 617px;
-}
 
-.section > img {
-	height: 300px;
-}
