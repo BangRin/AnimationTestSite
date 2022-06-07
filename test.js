@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded",() => {
             }
         })
     })
-    seq_init();
  })
+
 
  var idx = 0;
 
@@ -56,16 +56,19 @@ function seq_init(){
   function rolling() {
     setTimeout(function(){
       if(seq_play) idx++; 
-      $("a.ico_1 img").attr("src","https://raw.githubusercontent.com/BangRin/AnimationTestSite/main/resorce/Sequences/B1%EB%A7%B5_("+idx+").png");
+      $('a.ico_1 img').attr("src","https://raw.githubusercontent.com/BangRin/AnimationTestSite/main/resorce/Sequences/B1%EB%A7%B5_("+idx+").png");
       if(idx == 120) {
         seq_play = false;
         idx = 0;
       }
       if(!seq_play) {if(idx == 0) seq_play = true;}
       rolling();
-    },100);
+    },50);
   }
 }
+seq_init();
+
+
 
 
 
