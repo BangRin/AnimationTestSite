@@ -1,167 +1,57 @@
+
 @charset "UTF-8";
 @font-face{font-family:'Noto Sans KR'; src:url("resorce/Font/NotoSansKR-Regular.otf") format('opentype');}
+
 /*======================================================================
 * Reset
 ======================================================================*/
-* {
-	margin: 0;
-	padding: 0;
-	font-size: 100%;
-	outline: 0;
-	box-sizing: border-box;
-}
+* { margin: 0; padding: 0; font-size: 100%; outline: 0; box-sizing: border-box; }
 ul,
-ol {
-	list-style: none;
-}
-img {
-	max-width: 100%;
-}
-button {
-	color: inherit;
-	background-color: transparent;
-	border: 0;
-}
-a {
-	color: inherit;
-	text-decoration: none;
-}
+ol { list-style: none; }
+img {	max-width: 100%; }
+button { color: inherit; background-color: transparent; border: 0; }
+a { color: inherit; text-decoration: none; }
 
+/*======================================================================
+* Default Set
+======================================================================*/
 html,
-body {
-	width: 960px;
-	height: 1500px;
-}
-.section {
-	margin: 0 auto;
-	padding: 0 60px;
-	max-width: 960px;
-} 
+body { width: 960px; height: 1500px; }
 
-header {
-	z-index: 100;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 41.5px 0;
-}
-.panel_wrap {
-	position: relative;
-}
-.panel {
-	display: flex;
-	justify-content: center;
-	gap: 10px;
-}
-.panel > button {
-	border-radius: 75px;
-	transition: 0.2s ease-in-out;
-	width: 75px;
-	height: 75px;
-	font-weight: bold;
-	color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex: 1;
-	font-size: 42.35px;
-}
+.section { margin: 0 auto; padding: 0 60px; max-width: 960px; } 
+
+
+/*======================================================================
+* Header
+======================================================================*/
+header { z-index: 100; width: 100%; position: absolute; top: 0; left: 0; padding: 41.5px 0; }
+.panel_wrap { position: relative; }
+.panel { display: flex; justify-content: center; gap: 10px; }
+.panel > button { display: flex; justify-content: center; align-items: center; flex: 1; width: 75px; height: 75px; border-radius: 75px; color: #fff; font-size: 42.35px; font-weight: bold; transition: 0.2s ease-in-out; }
 .panel > button.active,
-.panel > button:hover {
-	color: #363089;
-	background-color: #fff;
-}
+.panel > button:hover { color: #363089; background-color: #fff; }
 
-.panel > img {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.visual {
-	position: relative;
-	height: 1500px;
-	background-image: url("resorce/Background.png");
-	background-repeat: no-repeat;
-}
-.visual > .currentFloor {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	color: #fff;
-}
-.visual > .currentFloor span:first-child {
-	position: relative;
-    bottom:50px;
-	right: 30px;
-	font-size: 371.36px;
-}
-.visual > .currentFloor span:last-child {
-	position: relative;
-    bottom: 50px;
-	right: 50px;
-	font-size: 145.31px;
-}
-
-.visual > .section > .ico_1 {
-	position: relative;
-	top: 50px;
-}
-
-.visual > .section > .topText {
-	position:absolute;
-	text-align: right;
-	border-right: 3px solid white;
-	font-family:'Noto Sans KR';
-	color:#fff;
-	padding-right:8px;
-	top: 230px;
-	right:100px;
-	font-size: 18.84px;
-}
-
-.placeWrap{
-	float: left;
-	width: 100%;
-	padding: 50px 68px;
-}
+.panel > img { position: absolute; top: 0; left: 0; }
 
 
-.placeWrap > div{
-	display: inline-block;
-	width: calc((100%/2) - 20px);
-	background-color: rgba(0,0,0,0.15);
-	border-radius:8px;
-	padding:3rem;
-	color: #fff;
-}
+/*======================================================================
+* Main Contents
+======================================================================*/
+.visual { position: relative; height: 1500px; background-image: url("resorce/Background.png"); background-repeat: no-repeat; }
+.visual > .currentFloor { position: absolute; right: 0; bottom: 0; color: #fff; }
+.visual > .currentFloor span:first-child { position: relative; right: 30px; bottom: 50px; font-size: 371.36px; }
+.visual > .currentFloor span:last-child { position: relative; right: 50px; bottom: 50px; font-size: 145.31px; }
+.visual > .section > .ico_1 { position: relative; top: 50px; }
+.visual > .section > .topText { position: absolute; top: 230px; right:100px; padding-right: 8px; text-align: right; border-right: 3px solid white; color:#fff; font-size: 18.84px; font-family:'Noto Sans KR'; }
 
-.placeWrap > div + div{
-	margin-left: 20px;
+.placeWrap { display: flex; padding: 50px 68px; }
+.placeWrap > div { display: inline-block; width: calc((100%/2) - 10px); height: 100%; padding:3rem; border-radius:8px; color: #fff; background-color: rgba(0,0,0,0.15); }
+.placeWrap > .convenience + .major { margin-left: 20px; }
+.placeWrap > img { max-height: 52px; }
+.placeWrap .contWrap { display: flex; align-items: center; gap:20px; font-size: 34px; }
+.placeWrap .contWrap + * { margin-top: 20px; }
 
-}
-
-.placeWrap > img{
-	max-height: 52px;
-}
-
-.placeWrap .contWrap{
-	display: flex;
-	align-items: center;
-	gap:20px;
-	font-size: 34px;
-}
-
-.placeWrap .contWrap + *{
-	margin-top: 20px;
-}
-
-.placeWrap .major{
-	position: relative;
-	top: -145px;
-}
-
+/*  */
 #contents {
 	position: relative;
 }
@@ -169,5 +59,3 @@ header {
 	height: 74px;
 	background-color: black;
 }
-
-

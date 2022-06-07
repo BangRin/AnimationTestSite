@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded",() => {
 //                 if (idx == 0) seq_play = true;
 //             }
 //             rolling();
-//         }, 75);
+//         }, 60);
 //     }
 // }
 // seq_init();
