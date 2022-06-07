@@ -1,0 +1,42 @@
+@charset "UTF-8"; 
+/*======================================================================
+* Reset
+======================================================================*/
+* 
+{ margin: 0; padding: 0; font-size: 100%; outline: 0; box-sizing: border-box; }
+ul,
+ol { list-style: none; }
+img { max-width: 100%; }
+button { color: inherit; background-color: transparent; border: 0; }
+a { color: inherit; text-decoration: none; }
+
+html, body{
+    width: 1080px;
+    height: 1768px;
+}
+.section { margin: 0 auto; padding: 0 70px; max-width: 1600px; }
+
+header{z-index: 100;width: 100%;position: absolute;top:0;left: 0;padding: 4rem 0;}
+.panel_wrap { position: relative;}
+.panel {display: flex;justify-content: center; gap: 20px;}
+.panel > button{border-radius: 75px;transition: 0.2s ease-in-out;width: 75px;height: 75px;font-weight: bold;color:#fff;display:flex;justify-content:center;align-items: center; flex: 1; font-size: 2.6rem;}
+.panel > button.active,
+.panel > button:hover{color: #9810e2;background-color: #fff}
+
+
+.panel > img{position:absolute;top:0;left:0;}
+
+.visual{position: relative;height: 490px;background-image: url("resorce/그라데이션이미지.png"); background-repeat: no-repeat;}
+.visual > .currentFloor {position:absolute; right: 0;bottom: 0; color: #fff;}
+.visual > .currentFloor span:first-child{position: relative;right: 30px;font-size: 17rem;}
+.visual > .currentFloor span:last-child{position: relative;right: 60px;font-size: 10rem;}
+
+#contents{position: relative;}
+.blackbackground{height: 100vh;background-color: black;}
+.gallery{padding:30px 0;display:flex; justify-content: space-between;color: #fff;}
+.gallery > div{display:flex;justify-content: center;align-items: center;gap: 30px;font-size: 2.2rem; padding:1rem 1.2rem;}
+.gallery > div > p {font-weight: bold;}
+.gallery > div > .galleryNum{display:flex;justify-content: center;align-items: center;font-size: 40px;font-weight: bold;width: 55px;height: 55px;border-radius: 50%;}
+.gallery > div > .galleryNum > span{position: relative;top:-4px;}
+.gallery > div:first-child > .galleryNum{background-color: #a011ee;}
+.gallery > div:last-child > .galleryNum{background-color: #c510a4;}
