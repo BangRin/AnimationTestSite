@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded",() => {
     let mapImage = document.getElementById("map");// 맵 애니메이션
     let floorText = document.querySelectorAll(".currentFloor > span"); //현재 층
 
+    // let lang = document.querySelector(" .lang");
+    // lang.innerHTML = getLanguage(); // 현재 언어
+
+
     var size = { width: window.innerWidth || document.body.clientWidth, height: window.innerHeight || document.body.clientHeight };
     
     // sizeTextWidth.innerHTML = size.width;
@@ -24,26 +28,27 @@ document.addEventListener("DOMContentLoaded",() => {
                 const currentFloorText = Array.from(btnActive.innerHTML);
                 text.innerHTML = currentFloorText[i];
             })
-
+            if(btnActive.innerHTML == "B1")
+            {
+                document.getElementById("gif").src ="resorce/gif/KakaoTalk_20220608_105140181.gif";
+            }
+            else if(btnActive.innerHTML == "1F")
+            {
+                document.getElementById("gif").src ="resorce/gif/KakaoTalk_20220608_105403025.png";
+            }
             if(btnActive !== null)
             {
                 btnActive.classList.remove("active");
             }document.addEventListener("DOMContentLoaded", () => {
                 console.log(size);
                 const btnList = document.querySelectorAll(".panel > button");
-                let sizeTextWidth = document.querySelector(".gallery1 > p");
-                let sizeTextheight = document.querySelector(".gallery2 > p");
             
                 let floorText = document.querySelectorAll(".currentFloor > span");
             
                 var size = {
                     width: window.innerWidth || document.body.clientWidth,
                     height: window.innerHeight || document.body.clientHeight,
-                };
-            
-                sizeTextWidth.innerHTML = size.width;
-                sizeTextheight.innerHTML = size.height;
-            
+                };            
                 btnList.forEach((btn, i) => {
                     btn.addEventListener("click", () => {
                         btn.classList.add("active");
@@ -64,8 +69,14 @@ document.addEventListener("DOMContentLoaded",() => {
     })
  })
 
+
+ function getLanguage() {
+    return navigator.language || navigator.userLanguage;
+}
+
 // var idx = 0;
-// function seq_init() {
+// function seq_init() //로컬 파일 이미지를 매프레임마다 로딩
+//    {
 //     var seq_play = true;
 //     var _img_load = 0;
 //     var _img_count = 120;
