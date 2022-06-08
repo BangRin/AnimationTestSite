@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded",() => {
             })
             if(btnActive.innerHTML == "B1")
             {
-                document.getElementById("gif").src ="resorce/gif/KakaoTalk_20220608_105140181.gif";
+                document.getElementById("gif").src ="resorce/gif/B1맵in.gif";
             }
             else if(btnActive.innerHTML == "1F")
             {
