@@ -29,14 +29,6 @@ document.addEventListener("DOMContentLoaded",() => {
                 const currentFloorText = Array.from(btnActive.innerHTML);
                 text.innerHTML = currentFloorText[i];
             })
-            /*if(btnActive.innerHTML == "B1")
-            {
-                $('#map').html('<video id="videoElem" src="./resource/gif/B1맵in_1.webm" autoplay="autoplay" muted="muted" />');
-            }
-            else if(btnActive.innerHTML == "1F")
-            {
-                $('#map').html('<img src="resource/gif/KakaoTalk_20220608_105403025.png" alt="" id="gif"/>');
-            }*/
             console.log(`${전층}→${i}`);
             전환(i, 'out', 전층);
             전층 = i;
@@ -74,13 +66,6 @@ document.addEventListener("DOMContentLoaded",() => {
             });
         })
     })
-    //↓↓새로써넣은부분↓↓
-    /*document.getElementById("videoElem").addEventListener("ended", function(){
-        console.log('영상끝');
-        //$('#map').html('테스트');
-        $('#map').html('<img src="resource/gif/B1맵.png" alt="" id="gif"/>');
-    });*/
-    //↑↑새로써넣은부분↑↑
 })
 
 function 전환(새층, 뭘로, 전층){
