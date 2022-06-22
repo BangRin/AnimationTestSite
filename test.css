@@ -30,7 +30,7 @@ header { z-index: 100; width: 100%; position: absolute; top: 0; left: 0; padding
 .panel { display: flex; justify-content: center; gap: 10px; }
 .panel > button { display: flex; justify-content: center; align-items: center; flex: 1; width: 75px; height: 75px; border-radius: 75px; color: #fff; font-size: 42.35px; font-weight: bold; transition: 0.2s ease-in-out; }
 .panel > button.active,
-.panel > button:hover { color: #363089; background-color: #fff; }
+.panel > button:active { color: #363089; background-color: #fff; }
 
 .panel > img { position: absolute; top: 0; left: 0; }
 
@@ -46,11 +46,15 @@ header { z-index: 100; width: 100%; position: absolute; top: 0; left: 0; padding
 .visual > .section > .topText { position: absolute; top: 230px; right:100px; padding-right: 8px; text-align: right; border-right: 3px solid white; color:#fff; font-size: 18.84px; font-family:'Noto Sans KR'; }
 
 .placeWrap { display: flex; padding: 50px 68px; }
-.placeWrap > div { display: inline-block; width: calc((100%/2) - 10px); height: 100%; padding:3rem; border-radius:8px; color: #fff; background-color: rgba(0,0,0,0.15); }
+.placeWrap > div { display: inline-block; width: calc((100%/2) - 10px); height: 100%; padding:30px; border-radius:12px; color: #fff; background-color: rgba(0,0,0,0.15); }
 .placeWrap > .convenience + .major { margin-left: 20px; }
 .placeWrap > img { max-height: 52px; }
-.placeWrap .contWrap { display: flex; align-items: center; gap:20px; font-size: 34px; }
+.placeWrap .contWrap { display: flex; align-items: center; gap:20px;  }
+.convenience {font-size: 34px;}
+.major {font-size: 30px;font-weight: bold;}
 .placeWrap .contWrap + * { margin-top: 20px; }
+
+.mapCanvas {position: relative; width: 840px;height: 746.66px; top:40px;}
 
 /*  */
 #contents {

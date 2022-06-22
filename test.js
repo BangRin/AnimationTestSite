@@ -2,13 +2,10 @@ document.addEventListener("DOMContentLoaded",() => {
     const btnList = document.querySelectorAll(".panel > button");
     // let sizeTextWidth = document.querySelector(".gallery1 > p");
     // let sizeTextheight = document.querySelector(".gallery2 > p");
-    let mapImage = document.getElementById("map");// 맵 애니메이션
     let floorText = document.querySelectorAll(".currentFloor > span"); //현재 층
-    var 전층 = 0;
-
+    var 전층 = 1;
     // let lang = document.querySelector(" .lang");
     // lang.innerHTML = getLanguage(); // 현재 언어
-
 
     var size = { width: window.innerWidth || document.body.clientWidth, height: window.innerHeight || document.body.clientHeight };
     
@@ -22,61 +19,49 @@ document.addEventListener("DOMContentLoaded",() => {
 
     btnList.forEach((btn, i) => {
         btn.addEventListener("click",()=> {
+            btnList.forEach((item, j) => {
+                item.classList.remove("active");
+            })
             btn.classList.add("active");
-            let btnActive = document.querySelector(".panel > button.active");
 
+            let btnActive = document.querySelector(".panel > button.active");
+            var currentFloorText;
             floorText.forEach((text, i) => {
-                const currentFloorText = Array.from(btnActive.innerHTML);
+                currentFloorText = Array.from(btnActive.innerHTML);
                 text.innerHTML = currentFloorText[i];
             })
+            
             console.log(`${전층}→${i}`);
-            전환(i, 'out', 전층);
-            전층 = i;
-
-
-            if(btnActive !== null)
+            console.log(btnActive.innerHTML);
+            if(전층 != i && !currentChangeState)
             {
-                btnActive.classList.remove("active");
+                전환(i, 'out', 전층);
+                전층 = i;
             }
-            document.addEventListener("DOMContentLoaded", () => {
-                console.log(size);
-                const btnList = document.querySelectorAll(".panel > button");
+
             
-                let floorText = document.querySelectorAll(".currentFloor > span");
-            
-                var size = {
-                    width: window.innerWidth || document.body.clientWidth,
-                    height: window.innerHeight || document.body.clientHeight,
-                };            
-                btnList.forEach((btn, i) => {
-                    btn.addEventListener("click", () => {
-                        btn.classList.add("active");
-                        let btnActive = document.querySelector(".panel > button.active");
-            
-                        floorText.forEach((text, i) => {
-                            const currentFloorText = Array.from(btnActive.innerHTML);
-                            text.innerHTML = currentFloorText[i];
-                        });
-            
-                        if (btnActive !== null) {
-                            btnActive.classList.remove("active");
-                        }
-                    });
-                });
-            });
         })
     })
 })
 
+var currentChangeState = false;
+
 function 전환(새층, 뭘로, 전층){
     if(뭘로 == 'out')
+    {
+        currentChangeState = true;
         $('#map').html(`<video id="videoElem" src="./resource/gif/${전층}_out.webm" autoplay="autoplay" muted="muted" onended="전환(${새층}, 'in');"/>`);
+    }
     if(뭘로 == 'in')
+    {
         $('#map').html(`<video id="videoElem" src="./resource/gif/${새층}_in.webm" autoplay="autoplay" muted="muted" onended="전환(${새층}, '그림');"/>`);
+    }  
     else if(뭘로 == '그림')
+    {
         $('#map').html(`<img src="resource/gif/${새층}.png" alt="" id="gif"/>`);
+        currentChangeState = false;
+    }
 }
-
 
 function getLanguage() {
     return navigator.language || navigator.userLanguage;
