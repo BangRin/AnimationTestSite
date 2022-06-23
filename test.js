@@ -19,27 +19,30 @@ document.addEventListener("DOMContentLoaded",() => {
 
     btnList.forEach((btn, i) => {
         btn.addEventListener("click",()=> {
-            btnList.forEach((item, j) => {
-                item.classList.remove("active");
-            })
-            btn.classList.add("active");
-
-            let btnActive = document.querySelector(".panel > button.active");
-            var currentFloorText;
-            floorText.forEach((text, i) => {
-                currentFloorText = Array.from(btnActive.innerHTML);
-                text.innerHTML = currentFloorText[i];
-            })
-            
-            console.log(`${전층}→${i}`);
-            console.log(btnActive.innerHTML);
-            if(전층 != i && !currentChangeState)
+            if(currentChangeState)
+                return;
+            else
             {
-                전환(i, 'out', 전층);
-                전층 = i;
+                btnList.forEach((item, j) => {
+                    item.classList.remove("active");
+                })
+                btn.classList.add("active");
+    
+                let btnActive = document.querySelector(".panel > button.active");
+                var currentFloorText;
+                floorText.forEach((text, i) => {
+                    currentFloorText = Array.from(btnActive.innerHTML);
+                    text.innerHTML = currentFloorText[i];
+                })
+                
+                console.log(`${전층}→${i}`);
+                console.log(btnActive.innerHTML);
+                if(전층 != i)
+                {
+                    전환(i, 'out', 전층);
+                    전층 = i;
+                }
             }
-
-            
         })
     })
 })

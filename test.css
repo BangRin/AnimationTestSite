@@ -45,7 +45,7 @@ header { z-index: 100; width: 100%; position: absolute; top: 0; left: 0; padding
 .visual > .section > .ico_1 { position: relative; top: 50px; }
 .visual > .section > .topText { position: absolute; top: 230px; right:100px; padding-right: 8px; text-align: right; border-right: 3px solid white; color:#fff; font-size: 18.84px; font-family:'Noto Sans KR'; }
 
-.placeWrap { display: flex; padding: 50px 68px; }
+.placeWrap { position:relative; display: flex; padding: 50px 68px; bottom:230px; }
 .placeWrap > div { display: inline-block; width: calc((100%/2) - 10px); height: 100%; padding:30px; border-radius:12px; color: #fff; background-color: rgba(0,0,0,0.15); }
 .placeWrap > .convenience + .major { margin-left: 20px; }
 .placeWrap > img { max-height: 52px; }
@@ -54,7 +54,7 @@ header { z-index: 100; width: 100%; position: absolute; top: 0; left: 0; padding
 .major {font-size: 30px;font-weight: bold;}
 .placeWrap .contWrap + * { margin-top: 20px; }
 
-.mapCanvas {position: relative; width: 840px;height: 746.66px; top:40px;}
+.mapCanvas {position: relative; width: 960px;height: 960px; right: 60px;}
 
 /*  */
 #contents {
