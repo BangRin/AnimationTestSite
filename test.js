@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded",() => {
     const btnList = document.querySelectorAll(".panel > button");
+    let convenience = document.getElementById("convenience");
+    let major = document.getElementById("major");
     // let sizeTextWidth = document.querySelector(".gallery1 > p");
     // let sizeTextheight = document.querySelector(".gallery2 > p");
     let floorText = document.querySelectorAll(".currentFloor > span"); //현재 층
@@ -9,6 +11,7 @@ document.addEventListener("DOMContentLoaded",() => {
 
     var size = { width: window.innerWidth || document.body.clientWidth, height: window.innerHeight || document.body.clientHeight };
     
+
     // sizeTextWidth.innerHTML = size.width;
     // sizeTextheight.innerHTML = size.height; // 현재 화면의 사이즈 크기
 
@@ -27,25 +30,86 @@ document.addEventListener("DOMContentLoaded",() => {
                     item.classList.remove("active");
                 })
                 btn.classList.add("active");
-    
+                
                 let btnActive = document.querySelector(".panel > button.active");
                 var currentFloorText;
                 floorText.forEach((text, i) => {
                     currentFloorText = Array.from(btnActive.innerHTML);
                     text.innerHTML = currentFloorText[i];
                 })
-                
+                CurrentFloorInformation(i, convenience, major);
                 console.log(`${전층}→${i}`);
-                console.log(btnActive.innerHTML);
                 if(전층 != i)
                 {
                     전환(i, 'out', 전층);
                     전층 = i;
                 }
+                
             }
         })
     })
 })
+
+function CurrentFloorInformation(currentFloor, convenience, major)
+{
+    switch(currentFloor)
+    {
+        case 0:
+            convenience.innerHTML = 
+            '<div class = "contWrap"><img src = "resource/엘리베이터.png" alt="Elevete">엘리베이터</div><div class="contWrap"><img src = "resource/화장실.png" alt="toilet"/>화장실</div><div class="contWrap"><img src = "resource/에스컬레이터.png" alt="es"/>에스컬레이터</div>';
+            major.innerHTML = 
+            '<div class="contWrap"><div class="circle1" style="width:45px; height: 45px; border:3px solid rgb(255, 255, 255); border-radius:50%;background-color:#9349b4;"><span id="numText1" style="position:relative; left: 11px;bottom: 2px;">1</span></div>경기주택도시공사</div>';
+        break;
+        case 1:
+            convenience.innerHTML = 
+            '<div class = "contWrap"><img src = "resource/엘리베이터.png" alt="Elevete">엘리베이터</div><div class="contWrap"><img src = "resource/화장실.png" alt="toilet"/>화장실</div><div class="contWrap"><img src = "resource/에스컬레이터.png" alt="es"/>에스컬레이터</div><div class="contWrap"><img src = "resource/인포.png" alt="info"/>안내데스크</div>';
+            major.innerHTML = 
+            '<div class="contWrap"><div class="circle1" style="width:45px; height: 45px; border:3px solid rgb(255, 255, 255); border-radius:50%;background-color:#9349b4;"><span id="numText1" style="position:relative; left: 11px;bottom: 2px;">1</span></div>4차산업전시체험관</div><div class="contWrap"><div class="circle2" style="width:45px; height: 45px; border:3px solid rgb(255, 255, 255); border-radius:50%;background-color:#4045a6;"><span id="numText1" style="position:relative; left: 11px;bottom: 2px;">1</span></div>한국반도체연구조합</div>';
+        break;
+        case 2:
+            convenience.innerHTML = 
+            '<div class = "contWrap"><img src = "resource/엘리베이터.png" alt="Elevete">엘리베이터</div><div class="contWrap"><img src = "resource/화장실.png" alt="toilet"/>화장실</div>';
+            major.innerHTML = 
+            '<div class="contWrap"><div class="circle1" style="width:45px; height: 45px; border:3px solid rgb(255, 255, 255); border-radius:50%;background-color:#9349b4;"><span id="numText1" style="position:relative; left: 11px;bottom: 2px;">1</span></div>한국자동차연구원</div><div class="contWrap"><div class="circle2" style="width:45px; height: 45px; border:3px solid rgb(255, 255, 255); border-radius:50%;background-color:#4045a6;"><span id="numText1" style="position:relative; left: 11px;bottom: 2px;">1</span></div>차세대융합연구원</div>';
+        break;
+        case 3:
+            convenience.innerHTML = 
+            '<div class = "contWrap"><img src = "resource/엘리베이터.png" alt="Elevete">엘리베이터</div><div class="contWrap"><img src = "resource/화장실.png" alt="toilet"/>화장실</div>';
+            major.innerHTML = null;
+        break;
+        case 4:
+            convenience.innerHTML = 
+            '<div class = "contWrap"><img src = "resource/엘리베이터.png" alt="Elevete">엘리베이터</div><div class="contWrap"><img src = "resource/화장실.png" alt="toilet"/>화장실</div>';
+            major.innerHTML = '<div class="contWrap"><div class="circle1" style="width:45px; height: 45px; border:3px solid rgb(255, 255, 255); border-radius:50%;background-color:#9349b4;"><span id="numText1" style="position:relative; left: 11px;bottom: 2px;">1</span></div>전자부품연구원</div>';
+        break;
+        case 5:
+            convenience.innerHTML = 
+            '<div class = "contWrap"><img src = "resource/엘리베이터.png" alt="Elevete">엘리베이터</div><div class="contWrap"><img src = "resource/화장실.png" alt="toilet"/>화장실</div>';
+            major.innerHTML = '<div class="contWrap"><div class="circle1" style="width:45px; height: 45px; border:3px solid rgb(255, 255, 255); border-radius:50%;background-color:#9349b4;"><span id="numText1" style="position:relative; left: 11px;bottom: 2px;">1</span></div>정보통신기획평가원</div>';
+        break;
+        case 6:
+            convenience.innerHTML = 
+            '<div class = "contWrap"><img src = "resource/엘리베이터.png" alt="Elevete">엘리베이터</div><div class="contWrap"><img src = "resource/화장실.png" alt="toilet"/>화장실</div>';
+            major.innerHTML = null;
+        break;
+        case 7:
+            convenience.innerHTML = 
+            '<div class = "contWrap"><img src = "resource/엘리베이터.png" alt="Elevete">엘리베이터</div><div class="contWrap"><img src = "resource/화장실.png" alt="toilet"/>화장실</div>';
+            major.innerHTML = null;
+        break;
+        case 8:
+            convenience.innerHTML = 
+            '<div class = "contWrap"><img src = "resource/엘리베이터.png" alt="Elevete">엘리베이터</div><div class="contWrap"><img src = "resource/화장실.png" alt="toilet"/>화장실</div>';
+            major.innerHTML = null;
+        break;
+        case 9:
+            convenience.innerHTML =     
+            '<div class = "contWrap"><img src = "resource/엘리베이터.png" alt="Elevete">엘리베이터</div><div class="contWrap"><img src = "resource/화장실.png" alt="toilet"/>화장실</div>';
+            major.innerHTML = '<div class="contWrap"><div class="circle1" style="width:45px; height: 45px; border:3px solid rgb(255, 255, 255); border-radius:50%;background-color:#9349b4;"><span id="numText1" style="position:relative; left: 11px;bottom: 2px;">1</span></div>차세대융합기술원</div>';
+        break;
+    }
+}
+
 
 var currentChangeState = false;
 
