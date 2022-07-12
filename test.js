@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded",() => {
 
     btnList.forEach((btn, i) => {
         btn.addEventListener("click",()=> {
-            if(currentChangeState)
-                return;
-            else
-            {
+            // if(currentChangeState)
+            //     return;
+            // else
+            // {
                 btnList.forEach((item, j) => {
                     item.classList.remove("active");
                 })
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded",() => {
                     전층 = i;
                 }
                 
-            }
+            //}
         })
     })
 })
@@ -117,11 +117,11 @@ function 전환(새층, 뭘로, 전층){
     if(뭘로 == 'out')
     {
         currentChangeState = true;
-        $('#map').html(`<video id="videoElem" src="./resource/gif/${전층}_out.webm" autoplay="autoplay" muted="muted" onended="전환(${새층}, 'in');"/>`);
+        $('#map').html(`<video id="videoElem" src="./resource/gif/${전층}_out.webm" poster="./resource/gif/${전층}.png" autoplay="autoplay" muted="muted" onended="전환(${새층}, 'in');"/>`);
     }
     if(뭘로 == 'in')
     {
-        $('#map').html(`<video id="videoElem" src="./resource/gif/${새층}_in.webm" autoplay="autoplay" muted="muted" onended="전환(${새층}, '그림');"/>`);
+        $('#map').html(`<video id="videoElem" src="./resource/gif/${새층}_in.webm" poster="./resource/gif/${전층}.png"autoplay="autoplay" muted="muted" onended="전환(${새층}, '그림');"/>`);
     }  
     else if(뭘로 == '그림')
     {
